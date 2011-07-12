@@ -4,7 +4,10 @@ var browserify = require('browserify');
 var app = express.createServer();
 app.use(express.static(__dirname));
 
-var bundle = browserify({ entry : __dirname + '/main.js' });
+var bundle = browserify({
+    entry : __dirname + '/main.js',
+    watch : true,
+});
 app.use(bundle);
 
 console.log('Listening on :8080');
