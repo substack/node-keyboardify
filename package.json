@@ -1,0 +1,33 @@
+{
+    "name" : "keyboardify",
+    "version" : "0.0.1",
+    "description" : "Hand-drawn keyboard widget for use with browserify",
+    "main" : "index.js",
+    "browserify" : "browser.js",
+    "directories" : {
+        "lib" : ".",
+        "example" : "example",
+        "test" : "test"
+    },
+    "dependencies" : {
+        "express" : "2.4.x",
+        "jquery-browserify" : "1.6.x"
+    },
+    "repository" : {
+        "type" : "git",
+        "url" : "http://github.com/substack/node-keyboardify.git"
+    },
+    "keywords" : [
+        "keyboard",
+        "widget",
+        "input",
+        "browserify"
+    ],
+    "author" : {
+        "name" : "James Halliday",
+        "email" : "mail@substack.net",
+        "url" : "http://substack.net"
+    },
+    "license" : "MIT/X11",
+    "engine" : { "node" : ">=0.4" }
+}
