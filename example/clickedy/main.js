@@ -2,7 +2,12 @@ var $ = require('jquery-browserify');
 var keyboardify = require('keyboardify');
 
 $(window).ready(function () {
-    var keyboard = keyboardify().appendTo($('#keyboard'));
+    var keyboard = keyboardify()
+        .appendTo($('#keyboard'))
+        .on('key', function (key) {
+            $('#box').val($('#box').val() + key)
+        })
+    ;
     keyboard.element.hide();
     
     $('#toggle').toggle(

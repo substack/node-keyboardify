@@ -30,18 +30,22 @@ module.exports = function () {
         .height(300)
     ;
     
+    var makeKey = function (key) {
+        $('<div>')
+            .text(key)
+            .css(style.key)
+            .click(function (ev) {
+                ev.stopPropagation();
+                self.emit('key', key);
+            })
+            .appendTo(div)
+        ;
+    };
+    
     [ 'qwertyuiop', 'asdfghjkl', 'zxcvbnm' ]
         .map(function (row) { return row.split('') })
         .forEach(function (keys) {
-            $('<div>').css(style.row).append(
-                keys.map(function (key) {
-                    $('<div>')
-                        .text(key)
-                        .css(style.key)
-                        .appendTo(div)
-                    ;
-                })
-            );
+            $('<div>').css(style.row).append(keys.map(makeKey));
         })
     ;
     
